@@ -5,7 +5,7 @@ export default function Home() {
   return (
     
     <div>
-      <Button variant={"destructive"}>
+      <Button>
         Click Me
       </Button>
     </div>
