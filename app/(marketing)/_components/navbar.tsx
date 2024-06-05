@@ -6,7 +6,6 @@ import { Logo } from "./logo";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export const Navbar = () => { 
-
     const scrolled = useScrollTop();
 
     return (
