@@ -19,5 +19,15 @@
 	"prefix": ["exco"],
 	"body": ["export const $0 = () => { \n\treturn (\n\t\t<div className=\"\"></div>\n\t)\n};"],
 	"description": "For speed export const ."
-	}
+	},
+	"SFC with children": {
+	"prefix": ["sfcc"],
+	"body": ["const $1 = ({ \n\tchildren \n}: {\n\tchildren: React.ReactNode;\n}) => { \n\treturn (\n\t\t<div>\n\t\t\t{children}\n\t\t</div>\n\t)\n};\n\nexport default $1;"],
+	"description": "For speed create SFC with children."
+	},
+	"Use Client": {
+	"prefix": ["uc"],
+	"body": ["\"use client\";"],
+	"description": "For speed import useClient."
+	},
 }
