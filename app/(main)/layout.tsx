@@ -4,7 +4,6 @@ import { Spinner } from "@/components/spinner";
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
 import { Navigation } from "./_components/navigation";
-import { Search } from "lucide-react";
 import { SearchCommand } from "./_components/search-command";
 
 const MainLayout = ({ 

@@ -17,6 +17,7 @@ interface ItemProps {
     active?: boolean;
     expanded?: boolean;
     isSearch?: boolean;
+    isSettings?: boolean;
     level?: number;
     onExpand?: () => void;
     label: string;
@@ -25,7 +26,7 @@ interface ItemProps {
 }
 
 export const Item = (
-    { id, label, onClick, icon: Icon, active, documentIcon, isSearch, level = 0, onExpand, expanded }: ItemProps
+    { id, label, onClick, icon: Icon, active, documentIcon, isSearch, isSettings, level = 0, onExpand, expanded }: ItemProps
 ) => { 
 
     const create = useMutation(api.documents.create);
@@ -111,6 +112,13 @@ export const Item = (
                     <span className="text-xs">
                         ⌘
                     </span>K
+                </kbd>
+            )}
+            {isSettings && (
+                <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+                    <span className="text-xs">
+                        ⌘
+                    </span>S
                 </kbd>
             )}
             {!!id && (

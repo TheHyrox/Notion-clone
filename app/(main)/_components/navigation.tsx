@@ -129,8 +129,8 @@ export const Navigation = () => {
                 </div>
                 <div>
                     <UserItem />
-                    <Item label="Seach" icon={Search} isSearch onClick={search.onOpen} />
-                    <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
+                    <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
+                    <Item label="Settings" icon={Settings} isSettings onClick={settings.onOpen} />
                     <Item onClick={handleCreate} label="New page" icon={PlusCircle}/>
                 </div>
                 <div className="mt-4">

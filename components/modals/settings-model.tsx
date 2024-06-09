@@ -4,10 +4,28 @@ import { useSettings } from "@/hooks/use-settings";
 import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useEffect, useState } from "react";
 
 export const SettingsModal = () => {
 
     const settings = useSettings();
+
+    const toggle = useSettings((store) => store.toggle);
+    const isOpen = useSettings((store) => store.isOpen);
+    const onClose = useSettings((store) => store.onClose);
+
+    useEffect(() => {
+        const down = (e: KeyboardEvent) => {
+            if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault();
+                toggle();
+            }
+        }
+
+        document.addEventListener("keydown", down);
+        return () => { document.removeEventListener("keydown", down);}
+
+    }, [toggle]);
 
     return (
         <Dialog open={settings.isOpen} onOpenChange={settings.onClose}>
