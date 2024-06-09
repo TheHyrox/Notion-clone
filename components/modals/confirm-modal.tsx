@@ -1,6 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog";
+import { buttonVariants } from "../ui/button";
 
 interface ConfirmModalProps {
     children: React.ReactNode;
@@ -26,7 +28,7 @@ export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
                 <AlertDialogDescription>This action cannot be undone.</AlertDialogDescription>
                 <AlertDialogFooter>
                     <AlertDialogCancel onClick={(e) => e.stopPropagation()}>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleConfirm}>Delete forever</AlertDialogAction>
+                    <AlertDialogAction className={cn(buttonVariants({variant: "destructive"}))} onClick={handleConfirm}>Delete forever</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
