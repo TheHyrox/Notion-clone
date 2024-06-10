@@ -29,7 +29,7 @@ const DocumentsPage = () => {
             <Image src="/empty.png" height="300" width="300" alt="Empty" className="dark:hidden"/>
             <Image src="/empty-dark.png" height="300" width="300" alt="Empty" className="hidden dark:block"/>
             <h2 className="text-lg font-medium">
-                Welcome to {user?.firstName}&apos;s Jotion
+                Welcome to {user?.firstName}&apos;s Retion
             </h2>
             <Button onClick={onCreate}>
                 <PlusCircle className="h-4 w-4 mr-2"/>

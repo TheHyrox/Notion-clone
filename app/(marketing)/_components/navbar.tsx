@@ -30,7 +30,7 @@ export const Navbar = () => {
                         </SignInButton>
                         <SignInButton>
                             <Button size="sm">
-                                Get Jotion free
+                                Get Retion free
                             </Button>
                         </SignInButton>
                     </>
@@ -39,7 +39,7 @@ export const Navbar = () => {
                     <>
                         <Button variant="ghost" size="sm" asChild>
                             <Link href="/documents">
-                                Enter Jotion
+                                Enter Retion
                             </Link>
                         </Button>
                         <UserButton
