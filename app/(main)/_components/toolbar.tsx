@@ -1,12 +1,15 @@
 "use client";
 
-import { IconPicker } from "@/components/icon-picker";
-import { Button } from "@/components/ui/button";
-import { api } from "@/convex/_generated/api";
-import { Doc } from "@/convex/_generated/dataModel";
-import { useMutation } from "convex/react";
-import { ImageIcon, Smile, X } from "lucide-react";
 import { ElementRef, useRef, useState } from "react";
+import { ImageIcon, Smile, X } from "lucide-react";
+import { useMutation } from "convex/react";
+
+import { Doc } from "@/convex/_generated/dataModel";
+import { Button } from "@/components/ui/button";
+
+import { IconPicker } from "@/components/icon-picker";
+import { api } from "@/convex/_generated/api";
+
 import TestareaAutosize from "react-textarea-autosize";
 
 interface ToolbarProps {
@@ -37,10 +40,13 @@ export const Toolbar = ({
 
     const disableInput = () => setIsEditing(false);
 
-    const onInput = (value: string) => setValue(value); update({
-        id: initialData._id,
-        title: value || "Untitled"
-    });
+    const onInput = (value: string) => {
+        setValue(value); 
+        update({
+            id: initialData._id,
+            title: value || "Untitled"
+        });
+    }
 
     const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if(e.key === "Enter") {
